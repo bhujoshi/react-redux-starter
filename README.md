@@ -1,4 +1,4 @@
-# React + Redux + typescript stater kit 
+# React + Redux + Typescript stater kit 
 
 
 ### Installation
