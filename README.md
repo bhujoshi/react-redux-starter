@@ -1,6 +1,5 @@
-# Teachers V3
+# React + Redux + typescript stater kit 
 
-Teachers v3 is a web app for mypat teachers.
 
 ### Installation
 
@@ -16,5 +15,5 @@ Teachers v3 is a web app for mypat teachers.
 
 ### Who do I talk to?
 
-- Manjul Pathak
-- Teachers pod
+- bhuwanchandra@gmail.com 
+- 
