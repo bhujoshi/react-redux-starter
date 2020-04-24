@@ -8,6 +8,7 @@ export enum API_STATE {
   FAILED,
 }
 
+// TODO - try setup data interface 
 interface ApiInterface {
   apiState: API_STATE;
   data: any;
@@ -26,21 +27,26 @@ export default function createApiReducer(reducerName: string, initData: any) {
     name: reducerName,
     initialState,
     reducers: {
+      // Api init state 
       [`${reducerName}Init`]: () => initialState,
+      // Api Loading state
       [`${reducerName}Loading`]: (state: ApiInterface) => ({
         ...state,
         apiState: API_STATE.LOADING,
       }),
+      // Api Loaded State 
       [`${reducerName}Loaded`]: (state: ApiInterface, action) => ({
         error: '',
         apiState: API_STATE.LOADED,
         data: action.payload,
       }),
+      // Api Error state 
       [`${reducerName}Error`]: (state: ApiInterface, action) => ({
         ...state,
         apiState: API_STATE.ERROR,
         error: action.payload,
       }),
+      // Api failed state 
       [`${reducerName}Failed`]: (state: ApiInterface, action) => ({
         ...state,
         apiState: API_STATE.FAILED,

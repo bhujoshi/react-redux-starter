@@ -1,6 +1,5 @@
 import React from 'react';
-import Layout from './layout';
-import createStore from './app/stores/configure.store';
+import makeStore from './app/stores/configure.store';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
@@ -9,7 +8,7 @@ import {
   LOGIN_ROUTE,
 } from './app/constants/route.constant';
 
-const store = createStore();
+const store = makeStore();
 
 const LoginScreen = React.lazy(() =>
   import('./app/screens/LoginScreen/login.container'),
@@ -22,7 +21,6 @@ const DashboardScreen = React.lazy(() =>
 const App = () => (
   <Provider store={store}>
     <div className="App">
-      <Layout>
         <Router>
           <React.Suspense fallback={'Loading...'}>
             <Switch>
@@ -36,7 +34,6 @@ const App = () => (
             </Switch>
           </React.Suspense>
         </Router>
-      </Layout>
     </div>
   </Provider>
 );
